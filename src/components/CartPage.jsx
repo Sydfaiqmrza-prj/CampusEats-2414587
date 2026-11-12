@@ -5,12 +5,12 @@ function CartPage({ cart, onChangeQty, onRemove, onPlaceOrder, onChangeNote }) {
   if (cart.length === 0) {
     return <p className="muted">Your cart is empty. Pick something from a menu first.</p>
   }
-  
+
   const total = cart.reduce((sum, line) => sum + (line.item.price * line.qty), 0)
-  
+
   return (
     <div className="cart-layout">
-      <div className="card">
+      <div className="cart-panel">
         <ul className="cart-list">
           {cart.map((line) => (
             <CartItem key={line.item.id} line={line} onChangeQty={onChangeQty} onRemove={onRemove} onChangeNote={onChangeNote} />

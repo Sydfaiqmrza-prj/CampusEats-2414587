@@ -26,3 +26,9 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for:I asked ChatGPT how to make custom hooks (useLocalStorage, useVendors, and useCart), set up global state with CartContext, and add page navigation using react-router.
 - What I kept, changed or rejected, and why:I kept the CartContext setup, the useLocalStorage hook to keep cart items after refreshing, and the page navigation system. I also kept item notes saved in state so they show up on the OrdersPage.
 - One thing the AI got wrong and how I fixed it:The AI used outdated imports from react-router-dom which caused errors. I fixed it by importing directly from react-router. Also, the AI's quantity function erased item notes when changing quantities, so I fixed it in CartProvider.jsx by using { ...line, qty: line.qty + delta } to keep the note.
+
+## Week 5
+- Tool(s):ChatGPT
+- What I asked for:I asked how to set up Firebase Authentication with `AuthProvider`, protect `/cart` and `/orders` with `ProtectedRoute`, and restrict order notes and per-user cart storage to signed-in accounts.
+- What I kept, changed or rejected, and why:I kept the `onAuthStateChanged` listener, friendly auth error mapping, and `ce-cart-<uid>` localStorage keys, while linking guests to `/login` with `state={{ from: location.pathname }}`.
+- One thing the AI got wrong and how I fixed it:ChatGPT used mismatched header CSS class names (`.site-header` instead of `.header`), which I fixed by restoring `.header` and `.logo` in `Header.jsx` and `index.css`.

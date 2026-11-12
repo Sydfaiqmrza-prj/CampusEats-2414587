@@ -1,32 +1,33 @@
-import { useNavigate } from 'react-router';
-import { useCart } from '../hooks/useCart.js';
-import CartItem from '../components/CartItem.jsx';
-import CheckoutForm from '../components/CheckoutForm.jsx';
+import { useNavigate } from 'react-router'
+import { useCart } from '../hooks/useCart.js'
+import CartItem from '../components/CartItem.jsx'
+import CheckoutForm from '../components/CheckoutForm.jsx'
 
 export default function CartPage() {
-  const { cart, total, changeQty, removeFromCart, changeNote, placeOrder } = useCart();
-  const navigate = useNavigate();
+  const { cart, total, changeQty, removeFromCart, changeNote, placeOrder } = useCart()
+  const navigate = useNavigate()
 
   if (cart.length === 0) {
-    return <p className="muted">Your cart is empty. Pick something from a menu first.</p>;
+    return <p className="muted">Your cart is empty. Pick something from a menu first.</p>
   }
 
   function handlePlaceOrder(details) {
-    placeOrder(details);
-    navigate('/orders');
+    placeOrder(details)
+    navigate('/orders')
   }
 
   return (
     <div className="cart-layout">
       <div className="card">
+        <h2 className="section-title">Your cart</h2>
         <ul className="cart-list">
           {cart.map((line) => (
-            <CartItem 
-              key={line.item.id} 
-              line={line} 
-              onChangeQty={changeQty} 
-              onRemove={removeFromCart} 
-              onChangeNote={changeNote} 
+            <CartItem
+              key={line.item.id}
+              line={line}
+              onChangeQty={changeQty}
+              onRemove={removeFromCart}
+              onChangeNote={changeNote}
             />
           ))}
         </ul>
@@ -34,5 +35,5 @@ export default function CartPage() {
       </div>
       <CheckoutForm onPlaceOrder={handlePlaceOrder} />
     </div>
-  );
+  )
 }

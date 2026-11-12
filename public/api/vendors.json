@@ -1,25 +1,87 @@
 [
   {
     "id": "2414587-kafe-mallah-ali",
-    "name": "Kafe Mahallah Ali",
+    "name": "Faiq's Kitchen",
     "location": "Mahallah Ali, Block C",
     "openHours": "7:00 am - 10:00 pm",
     "isOpen": true,
     "menu": [
       { "id": "2414587-item-1", "name": "Nasi Lemak Ayam", "description": "Coconut rice, fried chicken, sambal, egg and peanuts", "price": 7.5, "category": "Rice", "available": true },
       { "id": "2414587-item-2", "name": "Mee Goreng Mamak", "description": "Fried yellow noodles with eggs and spices", "price": 6.0, "category": "Noodles", "available": true },
-      { "id": "2414587-item-3", "name": "Teh Tarik", "description": "Malaysian pulled milk tea", "price": 2.5, "category": "Drinks", "available": false }
+      { "id": "2414587-item-3", "name": "Teh Tarik", "description": "Malaysian pulled milk tea", "price": 2.5, "category": "Drinks", "available": false },
+      { "id": "2414587-faiq-curry-puff", "name": "Curry Puff", "description": "Crispy pastry filled with curried potato", "price": 2.0, "category": "Snacks", "available": true },
+      { "id": "2414587-faiq-fried-chicken", "name": "Fried Chicken", "description": "Crispy seasoned chicken pieces", "price": 6.0, "category": "Sides", "available": true },
+      { "id": "2414587-faiq-french-fries", "name": "French Fries", "description": "Golden fries served with tomato sauce", "price": 4.0, "category": "Snacks", "available": true },
+      { "id": "2414587-faiq-orange-juice", "name": "Orange Juice", "description": "Chilled orange drink", "price": 3.0, "category": "Drinks", "available": true },
+      { "id": "2414587-faiq-cola", "name": "Cola", "description": "Chilled carbonated soft drink", "price": 2.5, "category": "Drinks", "available": true }
     ]
   },
   {
     "id": "2414587-kafe-aminah",
-    "name": "Kafe Mahallah Aminah",
+    "name": "Uptown Metrocity Cafe",
     "location": "Mahallah Aminah, Ground Floor",
     "openHours": "8:00 am - 9:00 pm",
     "isOpen": true,
     "menu": [
       { "id": "2414587-item-4", "name": "Nasi Ayam Penyet", "description": "Smashed fried chicken with sambal and rice", "price": 9.0, "category": "Rice", "available": true },
-      { "id": "2414587-item-5", "name": "Air Bandung", "description": "Rose syrup with milk", "price": 3.0, "category": "Drinks", "available": true }
+      { "id": "2414587-item-5", "name": "Air Bandung", "description": "Rose syrup with milk", "price": 3.0, "category": "Drinks", "available": true },
+      { "id": "2414587-uptown-burger", "name": "Chicken Burger", "description": "Grilled chicken patty with lettuce and sauce", "price": 8.0, "category": "Burgers", "available": true },
+      { "id": "2414587-uptown-sandwich", "name": "Tuna Sandwich", "description": "Tuna and salad in toasted bread", "price": 6.5, "category": "Sandwiches", "available": true },
+      { "id": "2414587-uptown-nuggets", "name": "Chicken Nuggets", "description": "Crispy chicken nuggets served with dip", "price": 5.0, "category": "Snacks", "available": true },
+      { "id": "2414587-uptown-onion-rings", "name": "Onion Rings", "description": "Crispy battered onion rings", "price": 4.5, "category": "Snacks", "available": true },
+      { "id": "2414587-uptown-iced-coffee", "name": "Iced Coffee", "description": "Chilled coffee with milk", "price": 4.0, "category": "Drinks", "available": true },
+      { "id": "2414587-uptown-lemon-tea", "name": "Lemon Tea", "description": "Iced tea with a refreshing lemon flavour", "price": 3.5, "category": "Drinks", "available": true }
+    ]
+  },
+  {
+    "id": "2414587-warong-nusantara",
+    "name": "Warong Nusantara",
+    "location": "Jalan Satok, Kuching",
+    "openHours": "10:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      { "id": "2414587-warong-nasi-rendang", "name": "Nasi Rendang Daging", "description": "Steamed rice served with slow-cooked beef rendang", "price": 12.0, "category": "Rice", "available": true },
+      { "id": "2414587-warong-sirap-limau", "name": "Sirap Limau Ais", "description": "Chilled lime juice mixed with rose syrup", "price": 3.5, "category": "Drinks", "available": true },
+      { "id": "2414587-warong-ayam-goreng", "name": "Ayam Goreng Berempah", "description": "Crispy fried chicken with fragrant Malay spices", "price": 8.0, "category": "Chicken", "available": true },
+      { "id": "2414587-warong-satay", "name": "Chicken Satay", "description": "Grilled chicken skewers served with peanut sauce", "price": 9.0, "category": "Grill", "available": true },
+      { "id": "2414587-warong-martabak", "name": "Martabak Telur", "description": "Crispy stuffed pancake with egg and savoury filling", "price": 7.0, "category": "Snacks", "available": true },
+      { "id": "2414587-warong-pisang-goreng", "name": "Pisang Goreng", "description": "Golden battered fried banana", "price": 4.0, "category": "Desserts", "available": true },
+      { "id": "2414587-warong-teh-ais", "name": "Teh Ais", "description": "Chilled Malaysian milk tea", "price": 3.0, "category": "Drinks", "available": true },
+      { "id": "2414587-warong-soda-limau", "name": "Soda Limau", "description": "Sparkling soda with fresh lime", "price": 3.5, "category": "Drinks", "available": true }
+    ]
+  },
+  {
+    "id": "2414587-ceylonese-restaurant",
+    "name": "Ceylonese Restaurant",
+    "location": "Lorong Green Hill 2, Kuching",
+    "openHours": "11:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      { "id": "2414587-ceylonese-kottu-roti", "name": "Chicken Kottu Roti", "description": "Chopped flatbread stir-fried with chicken, vegetables and spices", "price": 14.0, "category": "Noodles", "available": true },
+      { "id": "2414587-ceylonese-milk-tea", "name": "Ceylon Milk Tea", "description": "Rich black tea brewed with milk", "price": 4.0, "category": "Drinks", "available": true },
+      { "id": "2414587-ceylonese-chicken-curry", "name": "Sri Lankan Chicken Curry", "description": "Chicken simmered in a fragrant island-spiced curry", "price": 13.0, "category": "Curry", "available": true },
+      { "id": "2414587-ceylonese-fish-curry", "name": "Sri Lankan Fish Curry", "description": "Fish cooked in a tangy coconut curry", "price": 14.0, "category": "Curry", "available": true },
+      { "id": "2414587-ceylonese-egg-hoppers", "name": "Egg Hopper", "description": "Bowl-shaped fermented rice pancake with egg", "price": 6.0, "category": "Snacks", "available": true },
+      { "id": "2414587-ceylonese-samosa", "name": "Vegetable Samosa", "description": "Crispy pastry filled with spiced vegetables", "price": 3.0, "category": "Snacks", "available": true },
+      { "id": "2414587-ceylonese-watalappam", "name": "Watalappam", "description": "Sri Lankan coconut and jaggery pudding", "price": 5.0, "category": "Desserts", "available": true },
+      { "id": "2414587-ceylonese-ginger-beer", "name": "Ginger Beer", "description": "Chilled ginger-flavoured soft drink", "price": 3.5, "category": "Drinks", "available": true }
+    ]
+  },
+  {
+    "id": "2414587-q-nasi-kukus",
+    "name": "Q Nasi Kukus",
+    "location": "Jalan Song, Kuching",
+    "openHours": "10:00 am - 9:00 pm",
+    "isOpen": true,
+    "menu": [
+      { "id": "2414587-q-ayam-berempah", "name": "Nasi Kukus Ayam Berempah", "description": "Fluffy steamed rice with spiced fried chicken and sambal", "price": 10.0, "category": "Rice", "available": true },
+      { "id": "2414587-q-teh-limau", "name": "Teh O Ais Limau", "description": "Iced black tea with fresh lime", "price": 3.0, "category": "Drinks", "available": true },
+      { "id": "2414587-q-ayam-kunyit", "name": "Nasi Ayam Kunyit", "description": "Rice served with turmeric chicken and vegetables", "price": 9.0, "category": "Rice", "available": true },
+      { "id": "2414587-q-telur-dadar", "name": "Telur Dadar", "description": "Fluffy Malaysian-style omelette", "price": 3.0, "category": "Sides", "available": true },
+      { "id": "2414587-q-sausage", "name": "Sausage", "description": "Grilled chicken sausage", "price": 3.5, "category": "Sides", "available": true },
+      { "id": "2414587-q-keropok", "name": "Keropok Lekor", "description": "Fried fish crackers served with dipping sauce", "price": 5.0, "category": "Snacks", "available": true },
+      { "id": "2414587-q-milo-ais", "name": "Milo Ais", "description": "Chilled malt chocolate drink", "price": 3.5, "category": "Drinks", "available": true },
+      { "id": "2414587-q-lemon-soda", "name": "Lemon Soda", "description": "Sparkling lemon soft drink served cold", "price": 3.5, "category": "Drinks", "available": true }
     ]
   }
 ]
