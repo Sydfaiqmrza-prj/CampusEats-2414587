@@ -67,3 +67,17 @@ The `<Link>` and `<NavLink>` components enable client side navigation without tr
 
 5. Why do `/vendor/abc` and `/xyz` show two different screens?
 The URL `/vendor/abc` matches a defined dynamic route pattern like `/vendor/:id`, causing React Router to load and display the vendor detail view with `abc` passed as a parameter. Conversely, `/xyz` does not match any valid route configuration and matches the catch all wildcard route `*`, rendering the fallback 404 Not Found screen.
+
+## Week 5 Reflection
+
+
+## Week 6 Reflection
+
+1. Explain, step by step, what happens from the moment you click Place order until the new order appears on your Orders page. Name the functions in your own code that run, and say why you never call `setOrders` yourself.
+Clicking Place order triggers `handleSubmit` in `CheckoutForm`, which calls `handlePlaceOrder` in `CartPage.jsx` and awaits `placeOrders` in `src/services/orders.js`. `placeOrders` groups cart items by `vendorId` and commits a `writeBatch` creating one order document per vendor in Firestore with `serverTimestamp()`. Once saved, `CartPage` runs `clearCart()` and redirects to `/orders` via `navigate('/orders')`. On `OrdersPage`, `useMyOrders` calls `subscribeToMyOrders` with `onSnapshot`, which automatically pushes the new order into state in real time so I never call `setOrders` myself.
+
+2. Why is `orders` a top-level collection, and why does each order copy `vendorName` and each item's `name` and `price` instead of storing only IDs?
+Keeping `orders` at the top level lets students query all their orders across vendors in a single `where('studentUid', '==', uid)` query, while letting vendors query their own orders by `vendorId`. Copying `vendorName` along with each item's `name` and `price` creates a permanent receipt snapshot at checkout. If a vendor later changes menu prices or deletes a dish, historical order totals and descriptions remain accurate. It also avoids extra Firestore reads to fetch vendor and menu documents every time the Orders page loads.
+
+3. Your personal feature: which Firestore path and fields hold its data, and which line of your code reads it? Paste that line.
+My personal feature (order notes per item) stores each note inside `orders/{orderId}` under the `items` array, where each object holds `itemId`, `name`, `price`, `qty`, and `note`. It is read live from Firestore in `subscribeToMyOrders` (`src/services/orders.js`) using the query line `const q = query(collection(db, 'orders'), where('studentUid', '==', uid))`. That query is passed into `onSnapshot` to stream updates into `useMyOrders`. Finally, `src/pages/OrdersPage.jsx` displays each saved note using `{item.note && <span className="order-note">Note: {item.note}</span>}`.

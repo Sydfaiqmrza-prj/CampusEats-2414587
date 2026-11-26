@@ -1,33 +1,38 @@
-import { useParams } from 'react-router'
-import { useVendors } from '../hooks/useVendors.js'
+import { Link, useParams } from 'react-router'
+import { useVendor } from '../hooks/useVendor.js'
 import MenuList from '../components/MenuList.jsx'
 import { Loading, ErrorMessage } from '../components/Status.jsx'
 
-export default function VendorPage() {
+function VendorPage() {
   const { id } = useParams()
-  const { vendors, loading, error, reload } = useVendors()
+  const { vendor, menu, loading, error } = useVendor(id)
 
   if (loading) return <Loading />
-  if (error) return <ErrorMessage message={error} onRetry={reload} />
-
-  const vendor = vendors.find((v) => v.id === id)
-
+  if (error) {
+    return <ErrorMessage message={error} onRetry={() => window.location.reload()} />
+  }
   if (!vendor) {
     return (
-      <div className="card error">
-        <h2>Vendor not found</h2>
-        <p className="muted">The vendor you are looking for does not exist.</p>
-      </div>
+      <p>
+        Vendor not found. <Link to="/">Back to vendors</Link>
+      </p>
     )
   }
 
+  const items = menu.map((item) => ({ ...item, vendorName: vendor.name }))
+
   return (
     <section>
-      <h2 className="section-title">Menu: {vendor.name}</h2>
-      <p className="muted" style={{ marginBottom: '1rem' }}>
-        {vendor.location} · Open: {vendor.openHours}
+      <p>
+        <Link to="/">&larr; All vendors</Link>
       </p>
-      <MenuList items={vendor.menu} />
+      <h2 className="section-title">{vendor.name}</h2>
+      <p className="muted" style={{ marginBottom: '1rem' }}>
+        {vendor.location} &middot; {vendor.openHours}
+      </p>
+      <MenuList items={items} />
     </section>
   )
 }
+
+export default VendorPage

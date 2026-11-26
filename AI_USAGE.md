@@ -32,3 +32,9 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for:I asked how to set up Firebase Authentication with `AuthProvider`, protect `/cart` and `/orders` with `ProtectedRoute`, and restrict order notes and per-user cart storage to signed-in accounts.
 - What I kept, changed or rejected, and why:I kept the `onAuthStateChanged` listener, friendly auth error mapping, and `ce-cart-<uid>` localStorage keys, while linking guests to `/login` with `state={{ from: location.pathname }}`.
 - One thing the AI got wrong and how I fixed it:ChatGPT used mismatched header CSS class names (`.site-header` instead of `.header`), which I fixed by restoring `.header` and `.logo` in `Header.jsx` and `index.css`.
+
+## Week 6
+- Tool(s):ChatGPT
+- What I asked for: How to connect Cloud Firestore in `firebase.js`, build `vendors.js` and `orders.js` services using `onSnapshot` and `writeBatch`, seed `vendors.json`, and store Digit 7 item notes inside order documents.
+- What I kept, changed or rejected, and why:** I kept the services-layer separation, `writeBatch` multi-vendor order creation, and `OrderStatus`/`OrderActions` components, while adding `note: note.trim()` to each item object in `placeOrders` so item notes save in Firestore and render on `OrdersPage`.
+- **One thing the AI got wrong and how I fixed it:** The initial snippet omitted `vendorId` inside `subscribeToMenu` and lacked a fallback while `serverTimestamp()` is still pending (`null`), which I fixed by returning `{ id: d.id, vendorId, ...d.data() }` and checking `order.createdAt ? order.createdAt.toDate().toLocaleString('en-MY') : 'just now'`.
